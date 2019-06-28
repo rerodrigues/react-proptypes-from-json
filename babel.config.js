@@ -13,6 +13,6 @@ module.exports = {
   ],
   ignore: [
     'node_modules',
-    'src/dist',
+    'dist',
   ],
 };

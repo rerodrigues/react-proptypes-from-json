@@ -1,13 +1,17 @@
 {
   "name": "@renatorodrigues/proptypes-from-json",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Auto generate React PropTypes from a JS Object",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "run-s lint:js",
     "lint:js": "eslint src/**/*.js",
-    "build": "BABEL_ENV=build babel src/ --delete-dir-on-start --out-dir src/dist --extensions .js --config-file ./babel.config.js --ignore **/*.test.js --no-comments",
+    "build": "BABEL_ENV=build babel src/ --delete-dir-on-start --out-dir dist --extensions .js --config-file ./babel.config.js --ignore **/*.test.js --no-comments",
     "build:watch": "npm run build -- -- --watch"
   },
   "repository": {
@@ -33,5 +37,9 @@
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.18.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react-is": "^16.8.6"
   }
 }
