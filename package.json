@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "run-s lint:js",
-    "lint:js": "eslint src/**/*.js"
+    "lint:js": "eslint src/**/*.js",
+    "build": "BABEL_ENV=build babel src/ --delete-dir-on-start --out-dir src/dist --extensions .js --config-file ./babel.config.js --ignore **/*.test.js --no-comments",
+    "build:watch": "npm run build -- -- --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,10 @@
   },
   "homepage": "https://github.com/rerodrigues/react-proptypes-from-json#readme",
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.18.0"
